@@ -1,18 +1,22 @@
-﻿<form asp-action="ReponerPrincipal">
+﻿@model Comida
+
+<form asp-action="ReponerPrincipal">
     <h1><label>REPONER PLATOS PRINCIPALES</label></h1>
     <body style="background-color:#FF3730">
         <div class="form-group">
-            <label class="control-label" style="color:aliceblue">NOMBRE DEL PLATO</label>
-            <input class="form-control" />
-        </div>
-
-        <div class="form-group">
-            <label class="control-label" style="color:aliceblue">PRECIO</label>
-            <input class="form-control" />
+            <label class="control-label">NOMBRE DEL PLATO</label>
+            <input asp-for="Nombre" class="form-control" />
         </div>
         <div class="form-group">
-            <label class="control-label" style="color:aliceblue">LINK DE IMAGEN</label>
-            <input class="form-control" />
+            <label class="control-label">PRECIO</label>
+            <input asp-for="Precio" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">LINK DE IMAGEN</label>
+            <input asp-for="Link" class="form-control" />
+        </div>
+        <div class="form-group" style="margin-top:10px;">
+            <input type="submit" value="ENVIAR" class="btn btn-outline-dark" />
         </div>
     </body>
 </form>

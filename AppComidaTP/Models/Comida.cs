@@ -5,7 +5,7 @@ namespace AppComidaTP.Models
     public class Comida
     {
         [Key]
-        public string Codigo { get; set; }
+        public int Codigo { get; set; }
         [Required]
         public string Nombre { get; set; }
         [Required]

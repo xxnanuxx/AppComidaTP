@@ -4,22 +4,23 @@
 
 namespace AppComidaTP.Migrations
 {
-    public partial class inicial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Alimentos",
+                name: "Bebida",
                 columns: table => new
                 {
-                    Codigo = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Codigo = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Precio = table.Column<float>(type: "real", nullable: false),
-                    Calorias = table.Column<int>(type: "int", nullable: false)
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Alimentos", x => x.Codigo);
+                    table.PrimaryKey("PK_Bebida", x => x.Codigo);
                 });
 
             migrationBuilder.CreateTable(
@@ -37,6 +38,21 @@ namespace AppComidaTP.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Comida",
+                columns: table => new
+                {
+                    Codigo = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Precio = table.Column<float>(type: "real", nullable: false),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comida", x => x.Codigo);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pedidos",
                 columns: table => new
                 {
@@ -51,18 +67,39 @@ namespace AppComidaTP.Migrations
                 {
                     table.PrimaryKey("PK_Pedidos", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Postre",
+                columns: table => new
+                {
+                    Codigo = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Precio = table.Column<float>(type: "real", nullable: false),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Postre", x => x.Codigo);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Alimentos");
+                name: "Bebida");
 
             migrationBuilder.DropTable(
                 name: "Clientes");
 
             migrationBuilder.DropTable(
+                name: "Comida");
+
+            migrationBuilder.DropTable(
                 name: "Pedidos");
+
+            migrationBuilder.DropTable(
+                name: "Postre");
         }
     }
 }

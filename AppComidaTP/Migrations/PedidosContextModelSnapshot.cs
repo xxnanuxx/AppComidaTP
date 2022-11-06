@@ -21,13 +21,17 @@ namespace AppComidaTP.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("AppComidaTP.Models.Alimento", b =>
+            modelBuilder.Entity("AppComidaTP.Models.Bebida", b =>
                 {
-                    b.Property<string>("Codigo")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Calorias")
+                    b.Property<int>("Codigo")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"), 1L, 1);
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
@@ -38,7 +42,7 @@ namespace AppComidaTP.Migrations
 
                     b.HasKey("Codigo");
 
-                    b.ToTable("Alimentos");
+                    b.ToTable("Bebida");
                 });
 
             modelBuilder.Entity("AppComidaTP.Models.Cliente", b =>
@@ -60,6 +64,30 @@ namespace AppComidaTP.Migrations
                     b.HasKey("Dni");
 
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("AppComidaTP.Models.Comida", b =>
+                {
+                    b.Property<int>("Codigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"), 1L, 1);
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Precio")
+                        .HasColumnType("real");
+
+                    b.HasKey("Codigo");
+
+                    b.ToTable("Comida");
                 });
 
             modelBuilder.Entity("AppComidaTP.Models.Pedido", b =>
@@ -89,6 +117,30 @@ namespace AppComidaTP.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pedidos");
+                });
+
+            modelBuilder.Entity("AppComidaTP.Models.Postre", b =>
+                {
+                    b.Property<int>("Codigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"), 1L, 1);
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Precio")
+                        .HasColumnType("real");
+
+                    b.HasKey("Codigo");
+
+                    b.ToTable("Postre");
                 });
 #pragma warning restore 612, 618
         }

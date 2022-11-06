@@ -2,25 +2,30 @@
 <form asp-action="Index">
     <body style="background-color:#FF3730">
         <h1><label>BIENVENIDO A APPCOMIDA</label></h1>
-        
-        <div class="container">
-            <div class="row" style="margin-top:10px">
-                <div class="col">
+        <details>
+            <summary>
+                EMPLEADO CLIENTE
+            </summary>
+                <div class="col" style="margin-top:10px">
                     <a class="btn btn-dark" asp-controller="AgregarPedido" asp-action="AgregarPrincipal">AGREGAR PEDIDO</a>
                 </div>
-                <div class="col">
+                <div class="col" style="margin-top:10px">
                     <a class="btn btn-dark" asp-controller="ModificarPedido" asp-action="Index">MODIFICAR PEDIDO</a>
                 </div>
-                <div class="col">
+                <div class="col" style="margin-top:10px">
                     <a class="btn btn-dark" asp-controller="EliminarPedido" asp-action="Index">CERRAR PEDIDO</a>
                 </div>
-                <div class="col">
+                <div class="col" style="margin-top:10px">
                     <a class="btn btn-dark" asp-controller="ListarPedido" asp-action="Index">MOSTRAR PEDIDOS VIGENTES</a> 
                 </div>
-                <div class="col">
-                    <a class="btn btn-dark" asp-controller="AgregarStock" asp-action="Index">AGREGAR STOCK</a>
-                </div>
+        </details>
+        <details style="margin-top:20px">
+            <summary>
+                EMPLEADO REPOSICION
+            </summary>
+            <div class="col" style="margin-top:10px">
+                <a class="btn btn-dark" asp-controller="AgregarStock" asp-action="Index">AGREGAR STOCK</a>
             </div>
-        </div>
+        </details>
     </body>
 </form>
