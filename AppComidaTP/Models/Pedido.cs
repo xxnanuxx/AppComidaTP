@@ -10,6 +10,8 @@ namespace AppComidaTP.Models
         public string Bebida { get; set; }
         public string Postre { get; set; }
         [Required]
+        public float Total { get; set; }
+        [Required]
         public string DniCliente { get; set; }
     }
 }

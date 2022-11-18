@@ -1,1 +1,27 @@
-﻿
+﻿@model IEnumerable<Bebida>
+
+<h1><label>LISTA DE BEBIDAS</label></h1>
+@foreach (var bebida in Model)
+{
+    <div class="container">
+        <div class="row" style="margin-top:10px">
+            <div class="col-2">
+                <img src="@bebida.Link" style="width:80px; height:70px">
+            </div>
+            <div class="col-6" style="text-align:left">
+                <div class="row">
+                    <label><b>@bebida.Nombre</b></label>
+                </div>
+                <div class="row">
+                    <label>$@bebida.Precio</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <a asp-action="AgregarPostre" asp-route-codigo="@bebida.Codigo" class="btn btn-outline-warning">ESCOGER</a>
+            </div>
+        </div>
+    </div>
+}
+<div class="col-2">
+    <a asp-action="RegistrarBebida" asp-route-principal="@Model" class="btn btn-outline-warning" style="">SIGUIENTE</a>
+</div>

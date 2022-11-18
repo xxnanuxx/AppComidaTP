@@ -1,0 +1,80 @@
+﻿@model ViewModel
+
+<h1><label>LISTA DE COMIDAS PRINCIPALES</label></h1>
+@foreach (var comida in Model.enComidas){
+<div class="container">
+    <div class="row" style="margin-top:10px">
+        <div class="col-2">
+            <img src="@comida.Link" style="width:80px; height:70px">
+        </div>
+        <div class="col-6" style="text-align:left">
+            <div class="row">
+                <label><b>@comida.Nombre</b></label>
+            </div>
+            <div class="row">
+                <label>$@comida.Precio</label>
+            </div>
+        </div>
+        <div class="col-2">
+                <a asp-action="EditComida" asp-route-codigo="@comida.Codigo" class="btn btn-outline-warning">EDITAR</a>
+        </div>
+        <div class="col-2">
+            <a asp-action="DeleteComida" asp-route-codigo="@comida.Codigo" class="btn btn-outline-danger">BORRAR</a>
+        </div>
+    </div>
+</div>
+}
+
+<h1><label>LISTA DE BEBIDAS</label></h1>
+@foreach (var bebida in Model.enBebidas)
+{
+    <div class="container">
+        <div class="row" style="margin-top:10px">
+            <div class="col-2">
+                <img src="@bebida.Link" style="width:80px; height:70px">
+            </div>
+            <div class="col-6" style="text-align:left">
+                <div class="row">
+                    <label><b>@bebida.Nombre</b></label>
+                </div>
+                <div class="row">
+                    <label>$@bebida.Precio</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <a asp-action="EditBebida" asp-route-codigo="@bebida.Codigo" class="btn btn-outline-warning">EDITAR</a>
+            </div>
+            <div class="col-2">
+                <a asp-action="DeleteBebida" asp-route-codigo="@bebida.Codigo" class="btn btn-outline-danger">BORRAR</a>
+            </div>
+        </div>
+    </div>
+}
+
+<h1><label>LISTA DE POSTRES</label></h1>
+@foreach (var postre in Model.enPostres)
+{
+    <div class="container">
+        <div class="row" style="margin-top:10px">
+            <div class="col-2">
+                <img src="@postre.Link" style="width:80px; height:70px">
+            </div>
+            <div class="col-6" style="text-align:left">
+                <div class="row">
+                    <label><b>@postre.Nombre</b></label>
+                </div>
+                <div class="row">
+                    <label>$@postre.Precio</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <a asp-action="EditPostre" asp-route-codigo="@postre.Codigo" class="btn btn-outline-warning">EDITAR</a>
+            </div>
+            <div class="col-2">
+                <a asp-action="DeletePostre" asp-route-codigo="@postre.Codigo" class="btn btn-outline-danger">BORRAR</a>
+            </div>
+        </div>
+    </div>
+}
+<a asp-action="Index" asp-controller="Home" class="btn btn-outline-dark" style="margin-top:10px;">VOLVER</a>
+

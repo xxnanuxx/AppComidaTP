@@ -1,9 +1,29 @@
-﻿<h1><label>AGREGAR PLATO PRINCIPAL</label></h1>
+﻿@model IEnumerable<Comida>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
+    <h1><label>AGREGAR PLATO PRINCIPAL</label></h1>
 
+    <h1><label>LISTA DE COMIDAS PRINCIPALES</label></h1>
+    @foreach (var comida in Model)
+    {
+        <div class="container">
+            <div class="row" style="margin-top:10px">
+                <div class="col-2">
+                    <img src="@comida.Link" style="width:80px; height:70px">
+                </div>
+                <div class="col-6" style="text-align:left">
+                    <div class="row">
+                        <label><b>@comida.Nombre</b></label>
+                    </div>
+                    <div class="row">
+                        <label>$@comida.Precio</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <a asp-action="AgregarBebida" asp-route-codigo="@comida.Codigo" class="btn btn-outline-warning">ESCOGER</a>
+                </div>
+            </div>
         </div>
+    }
+    <div class="col-2">
+        <input type="submit" value="SIGUIENTE" class="btn btn-outline-dark" />
     </div>
-</div>

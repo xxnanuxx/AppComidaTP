@@ -4,7 +4,7 @@
 
 namespace AppComidaTP.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,6 +61,7 @@ namespace AppComidaTP.Migrations
                     Comida = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Bebida = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Postre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Total = table.Column<float>(type: "real", nullable: false),
                     DniCliente = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

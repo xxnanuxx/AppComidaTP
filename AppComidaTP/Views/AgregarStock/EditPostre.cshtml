@@ -1,0 +1,22 @@
+﻿@model Postre
+
+<form asp-action="UpdatePostre">
+    <h1><label>EDITAR PLATO PRINCIPAL</label></h1>
+    <body style="background-color:#FF3730">
+        <div class="form-group">
+            <label class="control-label">NOMBRE DEL PLATO</label>
+            <input asp-for="Nombre" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">PRECIO</label>
+            <input asp-for="Precio" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label class="control-label">LINK DE IMAGEN</label>
+            <input asp-for="Link" class="form-control" />
+        </div>
+        <div class="form-group" style="margin-top:10px;">
+            <input type="submit" value="MODIFICAR" class="btn btn-outline-dark" />
+        </div>
+    </body>
+</form>

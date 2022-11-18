@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Postre>
+
+<h1><label>LISTA DE POSTRES</label></h1>
+@foreach (var postre in Model)
+{
+    <div class="container">
+        <div class="row" style="margin-top:10px">
+            <div class="col-2">
+                <img src="@postre.Link" style="width:80px; height:70px">
+            </div>
+            <div class="col-6" style="text-align:left">
+                <div class="row">
+                    <label><b>@postre.Nombre</b></label>
+                </div>
+                <div class="row">
+                    <label>$@postre.Precio</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <a ></a>
+                <input type="checkbox" onclick="">
+            </div>
+        </div>
+    </div>
+}
+<div class="col-2">
+    <a asp-action="RegistrarPostre" asp-route-principal="@Model" class="btn btn-outline-warning" style="">SIGUIENTE</a>
+</div>

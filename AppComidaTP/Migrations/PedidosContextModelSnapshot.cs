@@ -114,6 +114,9 @@ namespace AppComidaTP.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
+
                     b.HasKey("Id");
 
                     b.ToTable("Pedidos");

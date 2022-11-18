@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppComidaTP.Migrations
 {
     [DbContext(typeof(PedidosContext))]
-    [Migration("20221105000037_Inicial")]
-    partial class Inicial
+    [Migration("20221117232657_inicial")]
+    partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -115,6 +115,9 @@ namespace AppComidaTP.Migrations
                     b.Property<string>("Postre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
