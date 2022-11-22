@@ -17,12 +17,10 @@
                 </div>
             </div>
             <div class="col-2">
-                <a ></a>
-                <input type="checkbox" onclick="">
+                <a asp-action="AgregarCliente" asp-route-codigo="@postre.Codigo" class="btn btn-outline-warning">ESCOGER</a>
             </div>
         </div>
     </div>
+    
 }
-<div class="col-2">
-    <a asp-action="RegistrarPostre" asp-route-principal="@Model" class="btn btn-outline-warning" style="">SIGUIENTE</a>
-</div>
+<a asp-action="AgregarCliente" class="btn btn-outline-warning" style="margin-top:10px">SIGUIENTE</a>

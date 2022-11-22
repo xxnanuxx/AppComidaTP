@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Pedido>
+
+<h1><label>LISTA DE PEDIDOS</label></h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="head1">COMIDA</th>
+            <th class="head2">BEBIDA</th>
+            <th class="head3">POSTRE</th>
+            <th class="head4">CLIENTE</th>
+            <th class="head5">PRECIO</th>
+            <th class="head6"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedido in Model)
+        {
+        <tr>
+            <td>
+                @if (@pedido.Comida != "")
+                {
+                    <label>@pedido.Comida</label>
+                }
+                else
+                {
+                    <label>-</label>
+                }
+            </td>
+            <td>
+                @if (@pedido.Bebida != "")
+                {
+                    <label>@pedido.Bebida</label>
+                }
+                else
+                {
+                    <label>-</label>
+                }
+            </td>
+            <td>
+                @if (@pedido.Postre != "")
+                {
+                    <label>@pedido.Postre</label>
+                } else {
+                    <label>-</label>
+                }
+            </td>
+            <td>
+                <label>@pedido.DniCliente</label>
+            </td>
+            <td>
+                <label><b>$@pedido.Total</b></label>
+            </td>
+            <td>
+                <a asp-action="DeletePedido" asp-route-id="@pedido.Id" class="btn btn-outline-danger">BORRAR</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    .head1 {
+        width: 25%;
+    }
+
+    .head2 {
+        width: 10%;
+    }
+
+    .head3 {
+        width: 25%;
+    }
+
+    .head4 {
+        width: 20%;
+    }
+
+    .head5 {
+        width: 10%;
+    }
+
+    .head6 {
+        width: 10%;
+    }
+
+    
+    table {
+        table-layout: fixed;
+        width: 100%;
+        border-collapse: collapse;
+        border: 3px solid purple;
+    }
+</style>

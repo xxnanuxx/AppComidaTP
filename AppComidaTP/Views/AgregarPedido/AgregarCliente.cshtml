@@ -1,0 +1,30 @@
+﻿@model Pedido
+
+<form asp-action="AgregarCliente">
+    <h1><label>REGISTRAR CLIENTE</label></h1>
+    <body style="background-color:#FF3730">
+        <div class="container">
+            <div class="row" style="margin-top:10px;">
+                <div class="form-group">
+                    <label class="control-label">INGRESAR DNI DEL CLIENTE</label>
+                    <input asp-for="DniCliente" class="form-control" />
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <div class="form-group">
+                    <label class="control-label">TOTAL A PAGAR</label>
+                    <input asp-for="Total" class="form-control" />
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <div class="form-group">
+                    <input type="submit" value="CONFIRMAR PEDIDO" class="btn btn-outline-dark" />
+                </div>
+            </div>
+        </div>
+    </body>
+    <input asp-for="Comida" class="form-control" style="display:none"/>
+    <input asp-for="Bebida" class="form-control" style="display:none" />
+    <input asp-for="Postre" class="form-control" style="display:none" />
+    <input asp-for="Id" class="form-control" style="display:none"/>
+</form>
