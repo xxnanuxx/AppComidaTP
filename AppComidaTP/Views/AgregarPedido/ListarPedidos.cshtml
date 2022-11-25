@@ -1,63 +1,63 @@
 ﻿@model IEnumerable<Pedido>
-
-<h1><label>LISTA DE PEDIDOS</label></h1>
-<table class="table">
-    <thead>
-        <tr>
-            <th class="head1">COMIDA</th>
-            <th class="head2">BEBIDA</th>
-            <th class="head3">POSTRE</th>
-            <th class="head4">CLIENTE</th>
-            <th class="head5">PRECIO</th>
-            <th class="head6"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var pedido in Model)
-        {
-        <tr>
-            <td>
-                @if (@pedido.Comida != "")
-                {
-                    <label>@pedido.Comida</label>
-                }
-                else
-                {
-                    <label>-</label>
-                }
-            </td>
-            <td>
-                @if (@pedido.Bebida != "")
-                {
-                    <label>@pedido.Bebida</label>
-                }
-                else
-                {
-                    <label>-</label>
-                }
-            </td>
-            <td>
-                @if (@pedido.Postre != "")
-                {
-                    <label>@pedido.Postre</label>
-                } else {
-                    <label>-</label>
-                }
-            </td>
-            <td>
-                <label>@pedido.DniCliente</label>
-            </td>
-            <td>
-                <label><b>$@pedido.Total</b></label>
-            </td>
-            <td>
-                <a asp-action="DeletePedido" asp-route-id="@pedido.Id" class="btn btn-outline-danger">BORRAR</a>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
-
+<body >
+    <h1><label style="font-family:fantasy; font-size:60px">LISTA DE PEDIDOS</label></h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="head1">COMIDA</th>
+                <th class="head2">BEBIDA</th>
+                <th class="head3">POSTRE</th>
+                <th class="head4">CLIENTE</th>
+                <th class="head5">PRECIO</th>
+                <th class="head6"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pedido in Model)
+            {
+            <tr>
+                <td>
+                    @if (@pedido.Comida != "")
+                    {
+                        <label>@pedido.Comida</label>
+                    }
+                    else
+                    {
+                        <label>-</label>
+                    }
+                </td>
+                <td>
+                    @if (@pedido.Bebida != "")
+                    {
+                        <label>@pedido.Bebida</label>
+                    }
+                    else
+                    {
+                        <label>-</label>
+                    }
+                </td>
+                <td>
+                    @if (@pedido.Postre != "")
+                    {
+                        <label>@pedido.Postre</label>
+                    } else {
+                        <label>-</label>
+                    }
+                </td>
+                <td>
+                    <label>@pedido.DniCliente</label>
+                </td>
+                <td>
+                    <label><b>$@pedido.Total</b></label>
+                </td>
+                <td>
+                    <a asp-action="DeletePedido" asp-route-id="@pedido.Id" class="btn btn-outline-dark">BORRAR</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
 <style>
     .head1 {
         width: 25%;
@@ -88,6 +88,6 @@
         table-layout: fixed;
         width: 100%;
         border-collapse: collapse;
-        border: 3px solid purple;
+        border: 3px solid black;
     }
 </style>

@@ -1,29 +1,29 @@
 ﻿
 <form asp-action="Index">
     <body style="background-color:#FF3730">
-        <h1><label>BIENVENIDO A APPCOMIDA</label></h1>
-        <details>
-            <summary>
+        <h1><label style="font-family:fantasy; font-size:60px">BIENVENIDO A APPCOMIDA</label></h1>
+        <details style="margin-top:25px">
+            <summary style="font-size:22px">
                 EMPLEADO CLIENTE
             </summary>
             <div class="row">
-                <div class="col-lg-3" style="margin-top:10px">
+                <div class="col-6" style="margin-top:10px">
                     <a class="btn btn-dark" style="width:100%" asp-controller="AgregarPedido" asp-action="AgregarPrincipal">AGREGAR PEDIDO</a>
                 </div>
-                <div class="col-lg-3" style="margin-top:10px">
+                <div class="col-6" style="margin-top:10px">
                     <a class="btn btn-dark" style="width:100%" asp-controller="AgregarPedido" asp-action="ListarPedidos">LISTAR PEDIDOS VIGENTES</a>
                 </div>
             </div>
         </details>
-        <details style="margin-top:20px">
-            <summary>
+        <details style="margin-top:35px">
+            <summary style="font-size:22px">
                 EMPLEADO REPOSICION
             </summary>
             <div class="row">
-                <div class="col-lg-3" style="margin-top:10px">
+                <div class="col-6" style="margin-top:10px">
                     <a class="btn btn-dark" style="width:100%" asp-controller="AgregarStock" asp-action="Index">AGREGAR STOCK</a>
                 </div>
-                <div class="col-lg-3" style="margin-top:10px">
+                <div class="col-6" style="margin-top:10px">
                     <a class="btn btn-dark" style="width:100%" asp-controller="AgregarStock" asp-action="ListarStock">LISTAR STOCK COMPLETO</a>
                 </div>
             </div>

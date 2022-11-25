@@ -13,12 +13,12 @@
             <div class="row" style="margin-top:10px;">
                 <div class="form-group">
                     <label class="control-label">TOTAL A PAGAR</label>
-                    <input asp-for="Total" class="form-control" />
+                    <input asp-for="Total" class="form-control" disabled />
                 </div>
             </div>
             <div class="row" style="margin-top:10px;">
                 <div class="form-group">
-                    <input type="submit" value="CONFIRMAR PEDIDO" class="btn btn-outline-dark" />
+                    <input type="submit" value="CONFIRMAR PEDIDO" class="btn btn-dark" />
                 </div>
             </div>
         </div>
@@ -27,4 +27,5 @@
     <input asp-for="Bebida" class="form-control" style="display:none" />
     <input asp-for="Postre" class="form-control" style="display:none" />
     <input asp-for="Id" class="form-control" style="display:none"/>
+    <input asp-for="Total" class="form-control" style="display:none" />
 </form>

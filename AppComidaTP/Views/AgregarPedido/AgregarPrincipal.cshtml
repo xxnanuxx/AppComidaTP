@@ -1,27 +1,26 @@
 ﻿@model IEnumerable<Comida>
-
-<h1><label>AGREGAR PLATO PRINCIPAL</label></h1>
-
-<h1><label>LISTA DE COMIDAS PRINCIPALES</label></h1>
-@foreach (var comida in Model)
-{
-    <div class="container">
-        <div class="row" style="margin-top:10px">
-            <div class="col-2">
-                <img src="@comida.Link" style="width:80px; height:70px">
-            </div>
-            <div class="col-6" style="text-align:left">
-                <div class="row">
-                    <label><b>@comida.Nombre</b></label>
+<body style="background-color:#FF3730">
+    <h1><label style="font-family:fantasy; font-size:60px">AGREGAR PLATO PRINCIPAL</label></h1>
+    @foreach (var comida in Model)
+    {
+        <div class="container" style="margin-top:30px">
+            <div class="row" style="margin-top:10px">
+                <div class="col-sm-2 col-md-2 col-lg-1">
+                    <img src="@comida.Link" style="width:80px; height:70px">
                 </div>
-                <div class="row">
-                    <label>$@comida.Precio</label>
+                <div class="col-6" style="text-align:left; font-size:20px">
+                    <div class="row">
+                        <label><b>@comida.Nombre</b></label>
+                    </div>
+                    <div class="row">
+                        <label><i>$@comida.Precio</i></label>
+                    </div>
                 </div>
-            </div>
-            <div class="col-2">
-                <a asp-action="AgregarBebida" asp-route-codigo="@comida.Codigo" class="btn btn-outline-warning">ESCOGER</a>
+                <div class="col-2">
+                    <a asp-action="AgregarBebida" asp-route-codigo="@comida.Codigo" class="btn btn-dark">ESCOGER</a>
+                </div>
             </div>
         </div>
-    </div>
-}
-<a asp-action="AgregarBebida" class="btn btn-outline-warning" style="margin-top:10px">SIGUIENTE</a>
+    }
+    <a asp-action="AgregarBebida" class="btn btn-dark" style="margin-top:40px">SIGUIENTE</a>
+</body>
